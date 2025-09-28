@@ -32,6 +32,7 @@ img{
     border: 10px solid gray;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .card{
@@ -40,6 +41,17 @@ img{
     margin-left : 3.5px;
 }
 
+
+button{
+    
+    padding:15px 20px;
+    border: none;
+    background-color: #3C467B;
+    border-radius: 8px;
+    text-align: center;
+    color:#FAF8F1;
+
+}
 /* -----board css start-------- */
 /* -----common css end-------- */
 

@@ -1,4 +1,6 @@
 let cardBoard =document.getElementById("board");
+let timer = 1000;
+let gameOver =false;
 let score=0;
 let cardList =[
     "darkness" ,
@@ -21,7 +23,8 @@ let card1selected;
 let card2selected;
 
 window.onload =function(){
-   
+
+
    shuffleCards();
    startGame();
 
@@ -45,6 +48,10 @@ function shuffleCards(){
 }
 
 function startGame(){
+
+   
+
+    
     //arrange the boards 4*5;
     for(let r =0 ; r<rows ;r++ ){
         let row =[];
@@ -84,6 +91,25 @@ function hideCards(){
 
 
 function selectCard(){
+    timer -=20
+    document.querySelector(".time").innerHTML = `Time : ${timer}`;
+    if(timer <=0){
+        gameOver =true;
+        cardBoard.innerHTML ="Game Over";
+        cardBoard.style.cssText ="color :red ; font-size:50px; display:flex; flex-direction:column; justify-content:center; align-items:center;"
+        let btn =document.createElement("button");
+        cardBoard.appendChild(btn);
+        btn.innerHTML="Restart";
+
+
+        btn.addEventListener("click" , ()=> {
+
+            window.location.reload()
+        });
+      
+
+    }
+
     if(this.src.includes("back")){
         if(!card1selected){
             card1selected =this;

@@ -56,7 +56,7 @@ function startGame(){
             let card =document.createElement("img");
             cardBoard.append(card)
             card.id = r.toString() +"_"+ c.toString();
-            card.src = "../images/"+cardImg +".jpg";
+            card.src = "images/"+cardImg +".jpg";
             card.classList.add("card");
             card.addEventListener("click" , selectCard);
 
@@ -76,7 +76,7 @@ function hideCards(){
     for(let r =0 ;r<rows;r++){
       for(let c =0 ; c<columns ;c++){
         let card =document.getElementById(r.toString()+"_"+ c.toString());
-        card.src = "../images/"+ "back.jpg"; 
+        card.src = "images/"+ "back.jpg"; 
        
       }
     }
@@ -92,7 +92,7 @@ function selectCard(){
             let r= parseInt(coords[0]);
             let c =parseInt(coords[1]);
 
-            card1selected.src ="../images/" +board[r][c] + ".jpg";
+            card1selected.src ="images/" +board[r][c] + ".jpg";
 
         }
 
@@ -104,7 +104,7 @@ function selectCard(){
             let r= parseInt(coords[0]);
             let c =parseInt(coords[1]);
 
-            card2selected.src = "../images/"+board[r][c] + ".jpg";
+            card2selected.src = "images/"+board[r][c] + ".jpg";
             setTimeout(update ,1000)
 
         }
@@ -115,8 +115,8 @@ function selectCard(){
 function update(){
     if(card1selected.src != card2selected.src){
 
-        card1selected.src ="../images/back.jpg";
-        card2selected.src ="../images/back.jpg";
+        card1selected.src ="images/back.jpg";
+        card2selected.src ="images/back.jpg";
     }
     else{
         score++;

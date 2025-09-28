@@ -52,6 +52,32 @@ button{
     color:#FAF8F1;
 
 }
+.playAagin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 10px;
+}
+.yes{
+
+    padding:15px 20px;
+    border: none;
+    background-color: #004030;
+    border-radius: 8px;
+    text-align: center;
+    color:#FAF8F1;
+
+}
+.no{
+    padding:15px 20px;
+    border: none;
+    background-color: #DD0303;
+    border-radius: 8px;
+    text-align: center;
+    color:#FAF8F1;
+
+}
 /* -----board css start-------- */
 /* -----common css end-------- */
 

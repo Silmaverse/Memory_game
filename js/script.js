@@ -91,12 +91,12 @@ function hideCards(){
 
 
 function selectCard(){
-    timer -=20
+    timer -=10
     document.querySelector(".time").innerHTML = `Time : ${timer}`;
     if(timer <=0){
         gameOver =true;
         cardBoard.innerHTML ="Game Over";
-        cardBoard.style.cssText ="color :red ; font-size:50px; display:flex; flex-direction:column; justify-content:center; align-items:center;"
+        cardBoard.style.cssText ="color :red ; font-size:20px; display:flex; flex-direction:column; justify-content:center; align-items:center;"
         let btn =document.createElement("button");
         cardBoard.appendChild(btn);
         btn.innerHTML="Restart";
@@ -147,6 +147,28 @@ function update(){
     else{
         score++;
         document.getElementById("score").innerText= score;
+        if(score ==10){
+            cardBoard.innerHTML ="Congratulation you won . Do you want to play Again ?";
+            cardBoard.style.cssText ="color :white ; font-size:30px; display:flex; flex-direction:column; justify-content:center; align-items:center;"
+            let div = document.createElement('div');
+            div.classList.add("playAagin");
+            cardBoard.appendChild(div);
+            let btny =document.createElement("button");
+            btny.classList.add("yes");
+            let btnN =document.createElement("button");
+            btnN.classList.add("no");
+            div.appendChild(btny);
+            div.appendChild(btnN);
+            btny.innerHTML="Yes";
+            btnN.innerHTML ="No";
+
+            btny.addEventListener("click" ,()=>{
+                window.location.reload();
+            })
+
+
+
+        }
     }
     card1selected =null;
     card2selected =null
